@@ -1,4 +1,4 @@
-# java-shipment-exercise
+#  java-shipment-exercise
 
 แบบฝึกหัด Java OOP — ระบบคำนวณค่าขนส่ง Shipment  
 วิชา Object-Oriented Programming | ปีการศึกษา 2569
@@ -32,14 +32,21 @@ java-shipment-exercise/
 │   │   └── ShipmentSection4_Exercise.java
 │   └── test/java/com/example/
 │       └── ShipmentTest.java            ← JUnit 5 test cases
-├── ExpectedOutput_Section1.md
-├── ExpectedOutput_Section2.md
-├── ExpectedOutput_Section3.md
-├── ExpectedOutput_Section4.md
+├── ExpectedOutput_Section1.md  ...  Section4.md
+├── screenshots/                         ← ใส่รูปผลลัพธ์ตรงนี้
 └── README.md
 ```
 
 > เฉลยไม่ได้อยู่ใน repo นี้ — อาจารย์จะแจกให้หลังส่งงาน
+
+---
+
+## 🔧 เครื่องมือที่ใช้ในงานนี้
+
+| เครื่องมือ | ใช้ทำอะไร |
+|-----------|----------|
+| **Eclipse หรือ VS Code** | เปิดไฟล์ แก้ Bug ตาม TODO รันโปรแกรมดูผลลัพธ์ |
+| **CMD / Terminal** | รัน `mvn test` เพื่อทดสอบด้วย JUnit |
 
 ---
 
@@ -58,54 +65,49 @@ java-shipment-exercise/
 
 ```bash
 git clone https://github.com/your-username/java-shipment-exercise.git
-cd java-shipment-exercise
 ```
-
-> แทน `your-username` ด้วย GitHub username ของตัวเอง
 
 ---
 
-### Step 3 — เปิดไฟล์ที่ได้รับมอบหมาย
+### Step 3 — เปิดโปรเจกต์ใน Eclipse หรือ VS Code
 
-อาจารย์จะแจ้งว่าให้ทำ Section ใด (1, 2, 3 หรือ 4)
+**ใช้ Eclipse:**
+1. เปิด Eclipse → **File → Import**
+2. เลือก **Maven → Existing Maven Projects**
+3. กด **Browse** เลือกโฟลเดอร์ที่ Clone มา
+4. กด **Finish**
 
-```
-Section 1 → src/main/java/com/example/ShipmentSection1_Exercise.java
-Section 2 → src/main/java/com/example/ShipmentSection2_Exercise.java
-Section 3 → src/main/java/com/example/ShipmentSection3_Exercise.java
-Section 4 → src/main/java/com/example/ShipmentSection4_Exercise.java
-```
+> Eclipse จะโหลด `pom.xml` และดาวน์โหลด JUnit 5 ให้อัตโนมัติ
 
-เปิด `ExpectedOutput_SectionX.md` ของ Section นั้นไว้คู่กันเสมอ
+**ใช้ VS Code:**
+1. ติดตั้ง Extension: **Extension Pack for Java** (Microsoft)
+2. เปิด VS Code → **File → Open Folder** เลือกโฟลเดอร์ที่ Clone มา
+3. VS Code จะโหลด `pom.xml` และดาวน์โหลด JUnit 5 ให้อัตโนมัติ
+
+> ต้องมี Java 17+ ติดตั้งในเครื่องก่อน ดาวน์โหลดได้ที่ https://adoptium.net
 
 ---
 
-### Step 3.5 — ⚠️ ลบไฟล์ Section อื่นที่ไม่ใช่ของตัวเองออก
+### Step 3.5 — ⚠️ ลบไฟล์ Section อื่นออก
 
-> **สำคัญมาก** — หลัง Fork แล้วให้ลบไฟล์ของ Section อื่นออกจาก repo ตัวเองด้วย  
-> เพื่อไม่ให้สับสน และป้องกันการส่งงานผิด Section
-
-**ตัวอย่าง: ถ้าได้รับมอบหมาย Section 2**
+**สำคัญมาก** — เก็บเฉพาะ Section ที่ได้รับมอบหมาย ลบ Section อื่นออกด้วยคำสั่งนี้ใน CMD:
 
 ```bash
+# ตัวอย่าง: ถ้าได้ Section 2 ให้ลบ 1, 3, 4 ออก
 git rm src/main/java/com/example/ShipmentSection1_Exercise.java
 git rm src/main/java/com/example/ShipmentSection3_Exercise.java
 git rm src/main/java/com/example/ShipmentSection4_Exercise.java
-git rm ExpectedOutput_Section1.md
-git rm ExpectedOutput_Section3.md
-git rm ExpectedOutput_Section4.md
+git rm ExpectedOutput_Section1.md ExpectedOutput_Section3.md ExpectedOutput_Section4.md
 
 git commit -m "remove: ลบ Section ที่ไม่ใช่ของตัวเองออก"
 git push origin main
 ```
 
-> เก็บไว้เฉพาะ Section ของตัวเอง + `pom.xml` + `ShipmentTest.java` + `README.md`
-
 ---
 
-### Step 4 — แก้ Bug ตาม TODO
+### Step 4 — แก้ Bug ใน Eclipse
 
-แต่ละ Section มี Bug ที่ต่างกัน — แก้ตามลำดับ TODO ที่ระบุในไฟล์
+เปิดไฟล์ Exercise ของ Section ตัวเองใน Eclipse แล้วแก้ตามลำดับ TODO ในไฟล์
 
 | Section | บริษัท | Bug หลักที่ซ่อนไว้ |
 |:-------:|--------|-------------------|
@@ -116,23 +118,32 @@ git push origin main
 
 ---
 
-### Step 5 — รันด้วย Maven Test
+### Step 5 — รันโปรแกรมดูผลลัพธ์ (Eclipse หรือ VS Code)
 
-ตรวจสอบก่อนว่ามี Maven ในเครื่อง:
+**ใช้ Eclipse:**
+1. คลิกขวาที่ไฟล์ `ShipmentSectionX_Exercise.java`
+2. เลือก **Run As → Java Application**
+3. ดูผลลัพธ์ใน **Console** ด้านล่าง
+
+**ใช้ VS Code:**
+1. เปิดไฟล์ `ShipmentSectionX_Exercise.java`
+2. กดปุ่ม **▷ Run** มุมบนขวา หรือคลิกขวา → **Run Java**
+3. ดูผลลัพธ์ใน **Terminal** ด้านล่าง
+
+เปรียบเทียบกับ `ExpectedOutput_SectionX.md` ว่าตรงกันมั้ย
+
+---
+
+### Step 6 — รัน mvn test ใน CMD
+
+เมื่อผลลัพธ์โปรแกรมตรงแล้ว ให้เปิด CMD แล้วเข้าไปที่โฟลเดอร์โปรเจกต์:
 
 ```bash
-mvn -version
+cd path/ที่เก็บโปรเจกต์
+# ตัวอย่าง Windows: cd C:\Users\YourName\java-shipment-exercise
 ```
 
-ถ้ายังไม่มี ดาวน์โหลดได้ที่ https://maven.apache.org/download.cgi
-
-#### รัน Test ทั้งหมด
-
-```bash
-mvn test
-```
-
-#### รัน Test เฉพาะ Section ของตัวเอง
+รัน test ของ Section ตัวเอง:
 
 ```bash
 # Section 1
@@ -148,34 +159,39 @@ mvn -Dtest=ShipmentTest#sec3* test
 mvn -Dtest=ShipmentTest#sec4* test
 ```
 
-#### ผลลัพธ์ที่ต้องการเห็น (ตัวอย่าง Section 1)
+ผลลัพธ์ที่ต้องการ:
 
 ```
-[INFO] -------------------------------------------------------
-[INFO]  T E S T S
-[INFO] -------------------------------------------------------
-[INFO] Running com.example.ShipmentTest
-[INFO]
 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
-[INFO]
 [INFO] BUILD SUCCESS
 ```
 
-> `Failures: 0` และ `BUILD SUCCESS` = แก้ Bug ถูกต้องทุกจุด ✅
-
-#### ถ้า Test ยังไม่ผ่าน ให้ดูบรรทัดนี้
-
-```
-expected: <120.0> but was: <300.0>
-```
-
-แปลว่าค่าที่คำนวณได้ไม่ตรงกับที่คาดหวัง — กลับไปแก้ Bug ในไฟล์ Exercise
+> ⚠️ ถ้าขึ้น `BUILD FAILURE` — กลับไปแก้ Bug ใน Eclipse ต่อ
 
 ---
 
-### Step 6 — Push และส่งงาน
+### Step 7 — ถ่ายภาพและแนบใน screenshots/
 
-เมื่อ `mvn test` ผ่านแล้ว:
+สร้างโฟลเดอร์ `screenshots/` แล้วแนบรูป **2 ภาพ**:
+
+```bash
+mkdir screenshots
+```
+
+| ไฟล์รูป | ต้องเห็นอะไรในภาพ |
+|---------|-----------------|
+| `screenshots/mvn_test_result.png` | ผลลัพธ์ `mvn test` — ต้องเห็น `BUILD SUCCESS` และ `Failures: 0` |
+| `screenshots/program_output.png` | ผลลัพธ์ใน Eclipse Console — ต้องเห็นรายการและยอดรวมครบ |
+
+```bash
+git add screenshots/
+git commit -m "screenshot: แนบผลลัพธ์ mvn test และ program output"
+git push origin main
+```
+
+---
+
+### Step 8 — Push และส่งงาน
 
 ```bash
 git add src/main/java/com/example/ShipmentSectionX_Exercise.java
@@ -185,26 +201,6 @@ git push origin main
 
 **ส่ง link repo ให้อาจารย์:**  
 `https://github.com/your-username/java-shipment-exercise`
-
----
-
-##  Test Cases ใน ShipmentTest.java
-
-ไฟล์ `src/test/java/com/example/ShipmentTest.java` มี test ครอบคลุมทุก Section:
-
-| Test Method | ทดสอบอะไร | ผลที่คาดหวัง |
-|-------------|----------|-------------|
-| `sec1_standard_3kg` | TH001: 3.0 กก. STANDARD | 120.00 บาท |
-| `sec1_express_1_5kg` | TH002: 1.5 กก. EXPRESS | 150.00 บาท |
-| `sec1_standard_5kg` | TH003: 5.0 กก. STANDARD | 200.00 บาท |
-| `sec1_express_2kg` | TH004: 2.0 กก. EXPRESS | 200.00 บาท |
-| `sec1_standard_10kg` | TH005: 10.0 กก. STANDARD | 400.00 บาท |
-| `sec1_totalCost` | ยอดรวม SpeedEx | 1,070.00 บาท |
-| `sec2_totalCost` | ยอดรวม FlashMove | 1,070.00 บาท |
-| `sec3_totalCost` | ยอดรวม RocketShip | 1,240.00 บาท |
-| `sec4_totalCost` | ยอดรวม SwiftCargo | 1,310.00 บาท |
-| `edge_zeroWeight` | น้ำหนัก 0 กก. | 0.00 บาท |
-| `edge_emptyCompany` | ไม่มี Shipment | 0.00 บาท |
 
 ---
 
@@ -224,101 +220,14 @@ git push origin main
 
 ## ✅ Checklist ก่อนส่ง
 
-- [ ] Fork repo แล้ว
-- [ ] Clone ลงเครื่องแล้ว
+- [ ] Fork และ Clone repo แล้ว
+- [ ] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
 - [ ] ลบไฟล์ Section อื่นออกแล้ว
-- [ ] แก้ TODO ครบทุกจุด
-- [ ] `mvn test` ผ่าน — ขึ้น `BUILD SUCCESS`
+- [ ] แก้ TODO ครบทุกจุดใน Eclipse
+- [ ] รันใน Eclipse หรือ VS Code — ผลลัพธ์ตรงกับ ExpectedOutput
+- [ ] รัน `mvn test` ใน CMD — ขึ้น `BUILD SUCCESS`
 - [ ] `Failures: 0, Errors: 0`
+- [ ] แนบรูป `screenshots/mvn_test_result.png` แล้ว
+- [ ] แนบรูป `screenshots/program_output.png` แล้ว
 - [ ] `git push` ขึ้น GitHub แล้ว
 - [ ] ส่ง link repo ให้อาจารย์แล้ว
-
----
-
-## 📸 แนบรูปผลลัพธ์ (Screenshots)
-
-### วิธีแนบรูป
-
-**Step 1** — สร้างโฟลเดอร์ `screenshots/` ใน repo
-
-```bash
-mkdir screenshots
-```
-
-**Step 2** — รัน `mvn test` แล้วถ่ายภาพหน้าจอผลลัพธ์
-
-ภาพที่ต้องถ่ายมี 2 ภาพ:
-
-```
-screenshots/
-├── mvn_test_result.png     ← ผลลัพธ์ mvn test (BUILD SUCCESS)
-└── program_output.png      ← ผลลัพธ์ javac + java (console output)
-```
-
-**Step 3** — ใส่รูปเข้า repo
-
-```bash
-git add screenshots/
-git commit -m "screenshot: แนบผลลัพธ์ mvn test และ program output"
-git push origin main
-```
-
----
-
-### ภาพที่ 1 — ผลลัพธ์ mvn test
-
-รัน `mvn test` แล้วถ่ายภาพให้เห็น **ครบทั้งหมดนี้**:
-
-```
-[INFO] -------------------------------------------------------
-[INFO]  T E S T S
-[INFO] -------------------------------------------------------
-[INFO] Running com.example.ShipmentTest
-✓ [S1] STANDARD 3.0 กก. ต้องได้ 120.00 บาท
-✓ [S1] EXPRESS 1.5 กก. ต้องได้ 150.00 บาท
-...
-[INFO] Tests run: X, Failures: 0, Errors: 0, Skipped: 0
-[INFO] BUILD SUCCESS                                        ← ต้องเห็นบรรทัดนี้
-```
-
-> ⚠️ ถ้าขึ้น `BUILD FAILURE` — ยังแก้ Bug ไม่ครบ ห้ามส่ง
-
----
-
-### ภาพที่ 2 — ผลลัพธ์โปรแกรม (console output)
-
-รัน `javac` และ `java` แล้วถ่ายภาพให้เห็น **ผลลัพธ์ครบทุกบรรทัด**:
-
-```
-========================================
-  บริษัท        : SpeedEx Logistics
-  จำนวน Shipment : 5 รายการ
-========================================
-[TH001]  3.00 กก. | STANDARD |    120.00 บาท
-[TH002]  1.50 กก. | EXPRESS  |    150.00 บาท
-[TH003]  5.00 กก. | STANDARD |    200.00 บาท
-[TH004]  2.00 กก. | EXPRESS  |    200.00 บาท
-[TH005] 10.00 กก. | STANDARD |    400.00 บาท
-----------------------------------------
-  ยอดรวมทั้งหมด : 1,070.00 บาท        ← ต้องเห็นยอดรวมนี้
-========================================
-```
-
----
-
-### โครงสร้างไฟล์ที่สมบูรณ์ก่อนส่ง
-
-```
-java-shipment-exercise/
-├── pom.xml
-├── src/
-│   ├── main/java/com/example/
-│   │   └── ShipmentSectionX_Exercise.java   ← Section ของตัวเอง
-│   └── test/java/com/example/
-│       └── ShipmentTest.java
-├── screenshots/
-│   ├── mvn_test_result.png                  ← ✅ ต้องมี
-│   └── program_output.png                   ← ✅ ต้องมี
-├── ExpectedOutput_SectionX.md
-└── README.md
-```
