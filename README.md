@@ -220,8 +220,8 @@ git push origin main
 
 ## ✅ Checklist ก่อนส่ง
 
-- [ ] Fork และ Clone repo แล้ว
-- [ ] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
+- [✅] Fork และ Clone repo แล้ว
+- [✅] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
 - [ ] ลบไฟล์ Section อื่นออกแล้ว
 - [ ] แก้ TODO ครบทุกจุดใน Eclipse
 - [ ] รันใน Eclipse หรือ VS Code — ผลลัพธ์ตรงกับ ExpectedOutput
