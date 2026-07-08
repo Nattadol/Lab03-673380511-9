@@ -222,7 +222,7 @@ git push origin main
 
 - [✅] Fork และ Clone repo แล้ว
 - [✅] Import โปรเจกต์ใน Eclipse หรือ VS Code แล้ว
-- [ ] ลบไฟล์ Section อื่นออกแล้ว
+- [✅] ลบไฟล์ Section อื่นออกแล้ว
 - [ ] แก้ TODO ครบทุกจุดใน Eclipse
 - [ ] รันใน Eclipse หรือ VS Code — ผลลัพธ์ตรงกับ ExpectedOutput
 - [ ] รัน `mvn test` ใน CMD — ขึ้น `BUILD SUCCESS`
